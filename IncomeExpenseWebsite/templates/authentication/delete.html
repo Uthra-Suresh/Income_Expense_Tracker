@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+
+{% block content %}
+<div class="container mt-3">
+    {% include 'partials/_messages.html' %}
+<h5>Delete Account</h5>
+<form action="{% url 'delete_account' %}" method="post">
+    {% csrf_token %}
+    Do you want to delete your Account? If yes, click the submit button
+<input type="submit" class="btn btn-danger"></input>
+</form>
+<hr>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+<!doctype html>
+
+{% block content %}
+<div  style="background-color:#F3969A;">
+<div class="container">
+    <h1 class="text-center">Welcome to IncomeExpense Tracker</h1>
+    <img src="{% static 'img/ieimg.jpg' %}" style="width:70%;" class="img-fluid rounded mx-auto d-block">
+</div>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2 text-center">
+            <a href="{% url 'register' %}"><button class="btn btn-primary">Register</button></a>
+        </div>
+        <div class="col-md-2 text-center">
+            <a href="{% url 'login' %}"><button class="btn btn-primary">Login</button></a>
+        </div>
+        <div class="col-md-4"></div>
+
+    </div>
+</div>
+</div>   
+{% endblock content %}

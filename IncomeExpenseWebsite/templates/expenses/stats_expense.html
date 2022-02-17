@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+
+{% block content %}
+{% include 'partials/_messages.html' %}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-10">
+            <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="">Expenses Summary</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Summary</li>
+            </ol>
+            </nav>
+        </div> 
+    </div>
+    <div class="container col-md-10"> 
+        
+        <div class="col-md-5 float-start">
+            <div class="form-group">
+                <select class="form-control" name="timelimit" id="timelimit">
+                    <option name="timelimit" value="1">
+                        Today
+                    </option>
+                    <option name="timelimit" value="7">
+                        Past 7 days
+                    </option>
+                    <option name="timelimit" value="30">
+                        Past 30 days
+                    </option>
+                    <option name="timelimit" value="90">
+                        Past 90 days
+                    </option>
+                    <option name="timelimit" value="180">
+                        Past 180 days
+                    </option>
+                    <option name="timelimit" value="365">
+                        Past 365 days
+                    </option>
+                </select>
+            </div>
+            <canvas id="ChartCategory" width="200" height="200"></canvas>
+        </div>
+
+        <div class="col-md-5 float-end">
+            <canvas id="ChartMonth" width="200" height="200"></canvas>
+    </div>
+</div>
+  
+
+<script src="{% static 'js/statsExpenses.js' %}""></script>
+{% endblock content %}
+
